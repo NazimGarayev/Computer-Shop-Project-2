@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shopping</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="shopping.js" defer></script>
+  <link rel="stylesheet" href="shopping.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="btn btn-warning" href="index.html">Main Page</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-3">
+                <input
+                id="category-search-input"
+                type="search"
+                class="form-control"
+                placeholder="Search"
+                oninput="searchCategory(this)"
+                /><br />
+                <div id="computer-categories-div"></div>
+            </div>
+                <div class="col-sm-9">
+                    <div id="computers-loading">
+                        <div class="spinner-border"></div>
+                    </div>
+                    <div id="computers-div"></div>
+                    <div id="computers-loading-next">
+                        <div class="spinner-border"></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <button
+    type="button"
+    class="btn btn-primary"
+    id="open-basket-button"
+    onclick="onOpenBasket()"
+    >
+   Basket <span id="basket-computer-count" class="badge badge-light">0</span> 
+</button>
+
+<div id="computer-details-modal">
+    <div id="computer-details-modal-content">
+        <h2 style="text-align: center">More information about the computer</h2>
+        <div id="computer-modal-image-container"></div>
+        <div id="computer-modal-name"></div>
+        <div id="computer-modal-description">Description</div>
+        <div id="computer-modal-price">Price</div>
+        <div id="computer-modal-phone">Phone</div>
+        <div id="computer-modal-new">New</div>
+        <div id="computer-modal-ram">Operation memory</div>
+        <div id="computer-modal-cpu">CPU</div>
+        <div id="computer-modal-drive">Always memory</div>
+        <div id="computer-modal-drive-type">Tip of always memory</div>
+        <div id="computer-modal-os">Operation memory</div>
+        <div id="computer-modal-video-card">Video Card</div>
+    </div>
+</div>
+
+<div id="basket-modal">
+    <div id="basket-modal-content" style="overflow-x: auto">
+    <div style="overflow: auto; margin-bottom: 5px">
+    <span id="basket-modal-close-button">X</span>
+</div>
+<h1 style="text-align: center">Basket</h1>
+<table class="basket-table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Photo</th>
+
+            <th>Name</th>
+            <th>Cost</th>     
+            <th>Remain</th>
+            <th>Main cost</th>
+            <th></th>
+          </tr>
+      </thead>
+    <tbody id="basket-computers-table-body"></tbody>
+  </table>
+
+<div style="overflow: auto">
+<span id="basket-total-price"
+>Main worth:
+<span id="basket-total-price-content">0</span> AZN</span
+>
+<button
+onclick="clearBasket()"
+id="clear-basket-button"
+class="btn btn-danger"
+>
+Clean a Basket
+</button>
+<button
+onclick="confirmOrder()"
+id="confirm-order-button"
+class="btn btn-success"
+>
+ Confirm Order
+</button>
+</div>
+</div>
+</div>
+
+<div id="confirm-order-modal">
+    <div id="confirm-order-modal-content">
+        <div style="overflow: auto; margin-bottom: 5px">
+            <span id="confirm-order-modal-close-button">X</span>
+        </div>
+        <h1 style="text-align: center">Write your contacts</h1>
+        <div id="confirm-order-modal-form-div">
+        <form 
+        id="confirm-order-modal-form"
+        action=""
+        class="was-validated"
+        onsubmit="onOrderSubmit(event)"
+        >
+        <div class="form-group">
+            <label for="customer-name">Name:</label>
+            <input
+            type="text"
+            class="form-control"
+            id="customer-name"
+            placeholder="Write your name"
+            name="customer-name"
+            required
+            minlength="2"
+            maxlength="30"
+            />
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">
+                Do not put it empty. Minimum 2, maximum 30 should be.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="customer-address">Adress:</label>
+            <input
+            type="text"
+            class="form-control"
+            id="customer-address"
+            placeholder="Write your address"
+            required
+            maxlength="300"
+            />
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">Do not put it empty</div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="customer-phone">Phone:</label>
+            <input
+            type="text"
+            class="form-control"
+            id="customer-phone"
+            placeholder="Write your phonenumber"
+            name="customer-phone"
+            required
+            pattern="((\(\d{3}) ?)|(\d{3}-))?\d{3}-\d{4}"
+            />
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">
+                Phone is written in inncorrect position. It should be (000-000-0000) in format.
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="customer-email">Email:</label>
+            <input
+            type="text"
+            class="form-control"
+            id="customer-email"
+            placeholder="Write your Email"
+            name="customer-email"
+            required 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            />
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">
+                Email is written in incorrect position
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="customer-order-note">Note:</label>
+            <input
+            type="text"
+            class="form-control"
+            id="customer-order-note"
+            placeholder="You may add a note"
+            name="customer-order-note"
+            maxlength="300"
+            />
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">Do not put it empty</div>
+          </div>
+
+          <div class="form-group form-check">
+            <label class="form-check-label">
+                <input
+                class="form-check-input"
+                type="checkbox"
+                name="confirnation"
+                required
+                />
+              Confirming all data
+              <div class="valid-feedback">You confirmed</div>
+              <div class="invalid-feedback">You should confirm</div>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary">Save</button>
+         </form>
+    </div>
+</div>
+</div>
+
+<div id="fixed-elements"></div>
+
+<input
+type="text"
+class="form-control"
+oninput="onSearchInput(this)"
+onchange="onSearchChange(this)"
+onkeydown="onSearchKeyDown(event)"
+id="computer-search-input"
+placeholder="Search"
+/>
+</body>
+</html>

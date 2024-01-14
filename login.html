@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <script src="login.js" defer></script>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4">
+                <hr />
+                <a class="btn btn-warning" href="index.html">Main Page</a>
+                <hr />
+                <h2>Login to account</h2>
+                <hr />
+                <div
+                class="alert alert-danger"
+                id="login-error-alert"
+                style="display: none"
+                ></div>
+
+                <div
+                class="alert alert-success"
+                id="login-success-alert"
+                style="display: none"
+                ></div> -->
+
+                <form action="" class="was-validated" onsubmit="onLogin(event)">
+                <!-- <div class="form-group">
+                  <label for="username">User Name:</label>
+                  <input type="text" class="form-control" id="username" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" />
+                </div>
+                
+                <button type="submit" class="btn btn-success">
+                    Login to your account
+                </button>
+                <hr />
+                <span>You dont have an account?</span>
+                <a href="create-account.html" class="btn btn-primary"
+                >Create account</a
+                >
+            </form>
+            </div>
+
+            <div class="col-sm-4"></div>
+        </div>
+    </div>  -->
+    <div class="main-container">
+        <div class="form-container">
+
+            <div class="form-body">
+
+                <h2 class="title">Log in with</h2>
+
+                <div class="social-login">
+                    <ul>
+                        <li class="google"><a href="#">Google</a></li>
+                        <li class="fb"><a href="#">Facebook</a></li>
+                    </ul>
+                </div><!-- SOCIAL LOGIN -->
+
+                <div class="_or">or</div>
+
+                <form action="" class="the-form">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password">
+
+                    <input type="submit" value="Log In">
+
+                </form>
+
+            </div><!-- FORM BODY-->
+
+            <div class="form-footer">
+                <div>
+                    <span>Don't have an account?</span> <a href="create-account.html">Sign Up</a>
+                </div>
+            </div><!-- FORM FOOTER -->
+
+        </div><!-- FORM CONTAINER -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create new Account</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="create-account.js" defer></script>
+    <link rel="stylesheet" href="create-account.css" />
+<!-- </head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4">
+                <hr />
+                <a class="btn btn-warning" href="index.html">Main Page</a>
+                <hr />
+                <h2>Create Account</h2>
+                <hr />
+
+                <div
+                class="alert alert-danger"
+                id="user-exists-error-alert"
+                style="display: none"
+                ></div>
+
+                <div
+                class="alert alert-success"
+                id="user-created-alert"
+                style="display: none"
+                ></div> -->
+
+                <form
+                action=""
+                class="was-valiated"
+                onsubmit="onCreateAccount(event)"
+                >
+                 <!-- <div class="form-group">
+                    <label for="user-full-name">Ad:</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="user-full-name"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                    />
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">
+                        Dont put it empty. Minimum 2, Maksimum 30 simbols 
+                    </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label foe="user-phone">Phone:</label>
+                   <input
+                   type="text"
+                   class="form-control"
+                   id="user-phone"
+                   required
+                   pattern="((\(\d{3}) ?)|(\d{3}-))?\d{3}-\d{4}"
+                   />
+                   <div class="valid-feedback">True</div>
+                   <div class="invalid-feedback">
+                    Phone is writen in incorrect format. It should be (000-000-0000) in this format
+
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                    <label for="username">User name:</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                    />
+                    <div class="valid-feedback">True</div>
+                    <div class="invalid-feedback">
+                        Dont put that place empty. Could take minimum 2 and maksimum 30 simbols.
+                    </div>
+                 </div>
+
+                 <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                    />
+                    <div class="valid-feedback">True</div>
+                    <div class="invalid-feedback">
+                        Dont put that place empty. Could take minimum 2 and maksimum 30 simbols. 
+                    </div>
+                 </div>
+
+                 <button type="submit" class="btn btn-success">Create account</button>
+                 <hr />
+                 <span>Already have an account?</span>
+                 <a href="login.html" class="btn btn-primary">Login to account</a>
+                </form>                
+            </div>
+
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+</head>
+ <body>
+    <div class="wrapper">
+        <h2>Registration</h2>
+        <form action="#">
+          <div class="input-box">
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Create password" required>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Confirm password" required>
+          </div>
+          <div class="policy">
+            <input type="checkbox">
+            <h3>I accept all terms & condition</h3>
+          </div>
+          <div class="input-box button">
+            <input type="Submit" value="Register Now">
+          </div>
+          <div class="text">
+            <h3>Already have an account? <a href="login.html">Login now</a></h3>
+          </div>
+        </form>
+</body>
+</html>
